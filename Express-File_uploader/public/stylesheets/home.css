@@ -1,0 +1,96 @@
+body {
+    background-color: #FBFCF8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: teal;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+
+}
+
+.folder-container {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid teal;
+    box-shadow: -5px 5px teal;
+
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.folder-container:hover {
+    background-color: teal;
+    box-shadow: -2px 2px #FBFCF8;
+    color: #FBFCF8;
+    cursor: pointer;
+}
+
+.folder-container:hover svg path {
+    stroke: #FBFCF8;
+}
+
+.folder-title {
+    padding: 10px;
+}
+
+.folder-image {}
+
+.folder-actions {
+    display: flex;
+    width: calc(100% - 10px);
+    justify-content: end;
+    padding: 5px;
+
+}
+
+.folder-actions button {
+
+}
+
+
+/* FORM  */
+
+form{ 
+    display: none;
+}
+
+form.visible {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid teal;
+    box-shadow: -5px 5px teal;
+
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid teal;
+    color: #008080;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    max-width: 80%;
+
+
+}
+
+input:focus {
+    outline: none;
+}

@@ -5,6 +5,7 @@ nav{
   border-radius: 10px;
   outline: 1px solid teal;
   padding: 10px;
+  color: #FBFCF8;
 
   display: flex;
   justify-content: space-between;
