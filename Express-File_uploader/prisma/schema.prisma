@@ -19,6 +19,7 @@ model User {
   password  String
   email     String   @unique @db.VarChar(255)
   createdAt DateTime @default(now())
+  Folder    Folder[]
 }
 
 model Session {
@@ -28,4 +29,12 @@ model Session {
   expiresAt DateTime
 
   @@index([expiresAt])
+}
+
+model Folder {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  owner     User     @relation(fields: [userId], references: [id])
+  userId    String
 }

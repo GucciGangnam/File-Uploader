@@ -34,9 +34,21 @@
                 </div>
             </div>
 
-            <form action="/folder" method="POST">
-                <input id="folderName" name="folderName" placeholder="New folder" />
-                <img src="images/Folder.png" alt="folder" />
+            <form action="/folders" method="POST">
+                <input id="folderName" name="folderName" placeholder="New folder" minlength="1" maxlength="20"
+                    required />
+
+                <svg width="100px" height="100px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#008080">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M4 2C3.20435 2 2.44129 2.31607 1.87868 2.87868C1.31607 3.44129 1 4.20435 1 5V19C1 19.7957 1.31607 20.5587 1.87868 21.1213C2.44129 21.6839 3.20435 22 4 22H20C20.7957 22 21.5587 21.6839 22.1213 21.1213C22.6839 20.5587 23 19.7957 23 19V8C23 7.20435 22.6839 6.44129 22.1213 5.87868C21.5587 5.31607 20.7957 5 20 5H11.5352L10.1289 2.8906C9.75799 2.3342 9.13352 2 8.46482 2H4Z"
+                            fill="#008080" />
+                    </g>
+                </svg>
+
                 <div class="folder-actions">
                     <button type="button" class="cancel-button">Cancel</button>
                     <button type="submit">Create</button>
@@ -45,6 +57,33 @@
 
 
             <!-- RENDER ALL USERS FOLDERS HERE -->
+
+            <% if (folders.length> 0) { %>
+
+                <% folders.forEach(folder=> { %>
+                    <div class="folder-container">
+                        <div class="folder-title">
+                            <%= folder.name %>
+                        </div>
+
+                        <svg fill="#008080" width="100px" height="100px" viewBox="0 -1.5 35 35" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#008080" stroke-width="0.00035">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="#CCCCCC" stroke-width="0.21000000000000002" />
+                            <g id="SVGRepo_iconCarrier">
+                                <title>folder</title>
+                                <path
+                                    d="M8.431 9.155h20.958c2.158 0 2.158-2.238 0.084-2.238h-14.486c-0.83 0-1.244-1.244-1.244-1.244s-0.581-1.825-1.743-1.825h-10.789c-1.576 0-1.162 1.825-1.162 1.825s2.407 20.47 2.573 21.715 1.453 1.612 1.453 1.612l2.821-18.103c0.208-1.327 1.12-1.7 1.535-1.742zM33.658 9.942h-24.563c-0.733 0-1.328 0.594-1.328 1.327l-2.572 16.4c0 0.734 0.595 1.328 1.328 1.328h24.563c0.732 0 1.328-0.594 1.328-1.328l2.572-16.4c0-0.733-0.593-1.327-1.328-1.327z" />
+                            </g>
+                        </svg>
+                        
+                        <div class="folder-actions">
+                            <button>Share</button>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <% } %>
 
         </div>
 

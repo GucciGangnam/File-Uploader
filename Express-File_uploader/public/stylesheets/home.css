@@ -38,6 +38,9 @@ body {
 .folder-container:hover svg path {
     stroke: #FBFCF8;
 }
+.folder-container:hover svg {
+    fill: #FBFCF8;
+}
 
 .folder-title {
     padding: 10px;

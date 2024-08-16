@@ -8,10 +8,20 @@ const prisma = new PrismaClient();
 
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
   if (req.isAuthenticated()) {
+    console.log(req.user, req.user.id)
+    // Get all that users folders 
+    const folders = await prisma.folder.findMany({
+      where: {
+        userId: req.user.id
+      },
+      orderBy: {
+        createdAt: 'desc' // Sort by createdAt in descending order
+      },
+    })
     // User is authenticated, so `req.user` contains user info
-    res.render('home', { user: req.user });
+    res.render('home', { user: req.user, folders: folders });
   } else {
     // User is not authenticated, redirect to login
     res.redirect('/login');
@@ -23,7 +33,7 @@ router.get('/', function (req, res, next) {
 // LOGIN PAGE 
 // GET
 router.get('/login', function (req, res, next) {
-  const username = req.query.username || ''; 
+  const username = req.query.username || '';
   const messages = {
     error: req.flash('error') // Ensure this is properly set
   };
