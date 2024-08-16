@@ -1,0 +1,17 @@
+/* NAVBAR */
+
+nav{ 
+  background-color: teal;
+  border-radius: 10px;
+  outline: 1px solid teal;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .right{ 
+display: flex;
+align-items: center;
+gap: 10px;
+}
