@@ -21,7 +21,7 @@ const prisma = new PrismaClient();
 
 // Configure session middleware
 app.use(session({
-  cookie: { maxAge: 5 * 60 * 1000 }, // 5 minutes
+  cookie: { maxAge: 20 * 60 * 1000 }, // 5 minutes
   secret: 'your-session-secret',
   resave: false,
   saveUninitialized: false,

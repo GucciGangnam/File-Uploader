@@ -1,13 +1,17 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 <nav>
     <div class="left">
-        <h1>File Uploader</h1>
+        <h1
+        onclick="goHome()"
+        >File Uploader</h1>
     </div>
     <div class="right">
-        <p>Name</p>
         <button onclick="logout()">Logout</button>
     </div>
     <script>
+        function goHome() { 
+            window.location.href = '/';
+        }
         function logout() { 
             window.location.href = '/logout';
         }

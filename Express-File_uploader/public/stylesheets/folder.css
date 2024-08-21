@@ -1,0 +1,216 @@
+body {
+    background-color: #FBFCF8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: teal;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* conformation delete pop up */
+
+.confirmPop.visible{ 
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.441);
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.confirmPop{ 
+    display: none;
+
+}
+
+.dialog{ 
+    background-color: white;
+    border-radius: 10px;
+    outline: 1px solid teal;
+    box-shadow: -5px 5px teal;
+    width: 250px;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+}
+.dialog-button{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dialog-button .cal-btn{ 
+    background-color: teal;
+    border-radius: 0px;
+    padding: 10px;
+    border: none;
+    color: #FBFCF8;
+}
+.dialog-button .cal-btn:hover{ 
+    color: teal;
+    cursor: pointer;
+}
+.dialog-button .del-btn{ 
+    background-color: rgb(128, 0, 0);
+    border-radius: 0px;
+    padding: 10px;
+    border: none;
+    color: #FBFCF8;
+}
+.dialog-button .del-btn:hover{ 
+    color:  rgb(128, 0, 0);
+    cursor: pointer;
+}
+
+
+
+/* HEADER */
+.header{ 
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+}
+.header h1{ 
+    margin: 0px;
+}
+
+.header svg{ 
+    width: 25px;
+    height: 25px;
+    outline: 1px solid teal;
+    padding: 5px;
+}
+
+.header svg:hover {
+    width: 25px;
+    height: 25px;
+    outline: 1px solid teal;
+    padding: 5px;
+    background-color: teal;
+}
+
+.header svg:hover g path {
+    stroke: #FBFCF8;
+}
+
+/* .header svg:hover g path fill {
+    stroke: #FBFCF8;
+} */
+
+.header input{ 
+    color: rgb(0, 128, 128);
+    font-weight: bold;
+    font-size: 2em;
+    border: none;
+    border-bottom: 1px solid teal;
+}
+
+.header input:focus{ 
+    outline: none;
+}
+
+.edit-folder-name-btn{ 
+    display: block;
+}
+
+.edit-folder-name-btn.visible{ 
+    display: none;
+}
+
+.delete-folder-btn{ 
+    display: block;
+}
+
+.delete-folder-btn.visible{ 
+    display: none;
+}
+
+
+/* FORM */
+.folder-name{ 
+    display: block;
+}
+
+.folder-name.visible{ 
+    display: none;
+}
+.update-folder-name-form{ 
+    display: none;
+}
+.update-folder-name-form.visible{ 
+    display: block;
+}
+
+form button{ 
+    all: unset;
+}
+
+
+
+/* CONTENT */
+
+.content-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+
+}
+
+.file-container {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid teal;
+    box-shadow: -5px 5px teal;
+
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-container:hover {
+    background-color: teal;
+    box-shadow: -2px 2px #FBFCF8;
+    color: #FBFCF8;
+    cursor: pointer;
+}
+
+.file-container:hover svg path {
+    stroke: #FBFCF8;
+}
+.file-container:hover svg {
+    fill: #FBFCF8;
+}
+
+.file-title {
+    padding: 10px;
+}
+
+.file-image {}
+
+.file-actions {
+    display: flex;
+    width: calc(100% - 10px);
+    justify-content: end;
+    padding: 5px;
+
+}
+
+.file-actions button {
+
+}

@@ -9,10 +9,28 @@ nav{
 
   display: flex;
   justify-content: space-between;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+nav .left h1{ 
+  cursor: pointer;
 }
 
 nav .right{ 
 display: flex;
 align-items: center;
 gap: 10px;
+}
+
+nav .right button{ 
+  background: none;
+  border: 1px solid #FBFCF8;
+  padding: 10px;
+  color: #FBFCF8;
+}
+nav .right button:hover{ 
+  background: #FBFCF8;
+  border: 1px solid teal;
+  padding: 10px;
+  color: teal;
 }

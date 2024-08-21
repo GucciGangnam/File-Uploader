@@ -20,6 +20,7 @@ model User {
   email     String   @unique @db.VarChar(255)
   createdAt DateTime @default(now())
   Folder    Folder[]
+  file      file[]
 }
 
 model Session {
@@ -37,4 +38,17 @@ model Folder {
   createdAt DateTime @default(now())
   owner     User     @relation(fields: [userId], references: [id])
   userId    String
+  file      file[]
+}
+
+model file {
+  id        String   @id @default(uuid())
+  name      String
+  url       String
+  size      Int
+  createdAt DateTime @default(now())
+  owner     User     @relation(fields: [userId], references: [id])
+  userId    String
+  folder    Folder   @relation(fields: [folderId], references: [id])
+  folderId  String
 }

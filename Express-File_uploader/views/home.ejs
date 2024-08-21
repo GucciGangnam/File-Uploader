@@ -11,7 +11,7 @@
 <body>
     <%- include('navbar') %>
 
-        <h1>Folders</h1>
+        <h1><%= user.name %> </h1>
 
         <div class="content-container">
 
@@ -51,7 +51,7 @@
 
                 <div class="folder-actions">
                     <button type="button" class="cancel-button">Cancel</button>
-                    <button type="submit">Create</button>
+                    <button type="submit" class="create-button">Create</button>
                 </div>
             </form>
 
@@ -61,7 +61,7 @@
             <% if (folders.length> 0) { %>
 
                 <% folders.forEach(folder=> { %>
-                    <div class="folder-container">
+                    <div class="folder-container" onclick="openFolder(`<%= folder.id %>`)">
                         <div class="folder-title">
                             <%= folder.name %>
                         </div>
@@ -79,12 +79,10 @@
                         </svg>
                         
                         <div class="folder-actions">
-                            <button>Share</button>
                         </div>
                     </div>
                     <% }); %>
                         <% } %>
-
         </div>
 
         <!-- SCRIPT -->
@@ -102,6 +100,11 @@
                     form.classList.toggle('visible');
                 })
             });
+
+
+            function openFolder (id) { 
+                window.location.href = `/folders/${id}`
+            }
         </script>
         <!-- SCRIPT -->
 
